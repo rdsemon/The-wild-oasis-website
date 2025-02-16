@@ -28,14 +28,14 @@ export async function updateProfile(formData) {
 }
 
 export async function singInAction() {
-  const res = await fetch("http://localhost:3000/api/auth/providers", {
-    cache: "no-store",
-  });
-  const providers = await res.json();
-  const providerId = Object.values(providers)
-    .map((provider) => provider.id)
-    .at(0);
-  await signIn(`${providerId}`, { redirectTo: "/account" });
+  // const res = await fetch("http://localhost:3000/api/auth/providers", {
+  //   cache: "no-store",
+  // });
+  // const providers = await res.json();
+  // const providerId = Object.values(providers)
+  //   .map((provider) => provider.id)
+  //   .at(0);
+  await signIn("google", { redirectTo: "/account" });
 }
 
 export async function signOutAction() {
